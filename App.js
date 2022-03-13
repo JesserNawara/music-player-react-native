@@ -1,21 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Home from "./Screens/Home/Home"
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { View, StyleSheet } from "react-native"
+
+import Header from "./Components/Header"
+import BottomTabs from "./Navigation/BottomTabs"
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>5f</Text>
-      <Home />
-    </View>
+    <NavigationContainer>
+      <View style={styles.container}>
+        <Header />
+        <BottomTabs />
+      </View>
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 25,
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  }
+})
